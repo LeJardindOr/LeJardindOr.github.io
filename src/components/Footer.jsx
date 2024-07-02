@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 /*import {
   Facebook,
   Instagram,
@@ -47,68 +46,7 @@ function Footer() {
             </p>
           </div>
           <div className="col-md-8 mb-md-0 mb-4">
-            <div className="row">
-              <div className="col-md-4 mb-md-0 mb-4">
-                <h6>Services</h6>
-                <ul className="list-unstyled text-small">
-                  <li>
-                    <p>
-                      <Link
-                        className="text-muted custom-link"
-                        to="/services#clothing-alterations"
-                      >
-                        Alterations
-                      </Link>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Link
-                        className="text-muted custom-link"
-                        to="/services#vintage-restoration"
-                      >
-                        Vintage Restoration
-                      </Link>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Link
-                        className="text-muted custom-link"
-                        to="/services#online-consultation"
-                      >
-                        Online Consultation
-                      </Link>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-md-4 mb-md-0 mb-4">
-                <h6>Custom</h6>
-                <ul className="list-unstyled text-small">
-                  <li>
-                    <p>
-                      <Link className="text-muted custom-link" to="/booking">
-                        Weddings
-                      </Link>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Link className="text-muted custom-link" to="/booking">
-                        Custom Fabrics
-                      </Link>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Link className="text-muted custom-link" to="/booking">
-                        Speak to an Expert
-                      </Link>
-                    </p>
-                  </li>
-                </ul>
-              </div>
+            <div className="row">      
               <div className="col-md-4 mb-md-0 mb-4">
                 <h6>Contacts</h6>
                 <ul className="list-unstyled text-small">
