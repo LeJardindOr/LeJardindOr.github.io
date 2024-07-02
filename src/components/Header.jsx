@@ -1,75 +1,60 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { Collapse } from "bootstrap";
 
 function Header() {
   const location = useLocation();
   const currentPage = location.pathname;
-  const navbarRef = useRef(null);
-
-  useEffect(() => {
-    const navbar = navbarRef.current;
-    const bsCollapse = new Collapse(navbar, { toggle: false });
-    bsCollapse.hide();
-  }, [location]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="header border-bottom-line mx-5 pt-2 pb-3">
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <Link className="navbar-brand" to="/">
-          Le Jardin d&#39;Or
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          ref={navbarRef}
-          className="collapse navbar-collapse"
-          id="navbarNav"
-        >
-          <div className="container-fluid">
-            <ul className="navbar-nav ml-auto align-far-right">
-              <li className="nav-item mr-3">
+    <header className="header border-b mx-5 pt-2 pb-3">
+      <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div className="flex items-center flex-shrink-0 text-white mr-6">
+          <Link className="text-white no-underline hover:text-white hover:no-underline" to="/">
+            Le Jardin d&#39;Or
+          </Link>
+        </div>
+        <div className="block lg:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+            aria-controls="navbarNav"
+            aria-expanded={isMenuOpen ? "true" : "false"}
+            aria-label="Toggle navigation"
+          >
+            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div className={`${isMenuOpen ? "block" : "hidden"} w-full block flex-grow lg:flex lg:items-center lg:w-auto`} id="navbarNav">
+          <div className="text-sm lg:flex-grow">
+            <ul className="list-reset lg:flex justify-end flex-1 items-center">
+              <li className="mr-3">
                 <Link
-                  className={`nav-link text-dark fs-6 underline-animation ${
-                    currentPage === "/" ? "current-tab" : ""
-                  }`}
+                  className={`inline-block text-dark py-2 px-4 no-underline ${currentPage === "/" ? "font-bold" : "text-teal-200"}`}
                   to="/"
                 >
                   Home
                 </Link>
               </li>
-              <li className="nav-item mr-3">
+              <li className="mr-3">
                 <Link
-                  className={`nav-link text-dark fs-6 underline-animation ${
-                    currentPage === "/about" ? "current-tab" : ""
-                  }`}
+                  className={`inline-block text-dark py-2 px-4 no-underline ${currentPage === "/about" ? "font-bold" : "text-teal-200"}`}
                   to="/about"
                 >
                   About Us
                 </Link>
               </li>
-              <li className="nav-item mr-3">
+              <li className="mr-3">
                 <Link
-                  className={`nav-link text-dark fs-6 underline-animation ${
-                    currentPage === "/services" ? "current-tab" : ""
-                  }`}
+                  className={`inline-block text-dark py-2 px-4 no-underline ${currentPage === "/services" ? "font-bold" : "text-teal-200"}`}
                   to="/services"
                 >
                   Services
                 </Link>
               </li>
-              <li className="nav-item">
+              <li>
                 <Link
-                  className="nav-link btn btn-dark fs-6 text-white px-3 py-2"
+                  className="inline-block text-white bg-black py-2 px-4 no-underline"
                   to="/booking"
                 >
                   Reserve a table

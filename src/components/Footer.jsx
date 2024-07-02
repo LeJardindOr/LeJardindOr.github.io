@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
+/*import {
   Facebook,
   Instagram,
   Linkedin,
@@ -8,14 +8,8 @@ import {
   Youtube,
 } from "react-bootstrap-icons";
 
-function Footer() {
-  return (
-    <footer className="footer text-dark border-top-line mt-auto mx-5">
-      <div className="pt-5 pb-3">
-        <div className="row">
-          <div className="col-md-4 d-flex flex-column justify-content-between mb-md-0 mb-4">
-            <h6>Fine Threads co.</h6>
-            <div className="icon-row">
+
+<div className="icon-row">
               <Facebook
                 color="black"
                 size={20}
@@ -38,6 +32,16 @@ function Footer() {
               />
               <Youtube color="black" size={24} style={{ opacity: 0.5 }} />
             </div>
+*/
+
+function Footer() {
+  return (
+    <footer className="footer text-dark border-top-line mt-auto mx-5">
+      <div className="pt-5 pb-3">
+        <div className="row">
+          <div className="col-md-4 d-flex flex-column justify-content-between mb-md-0 mb-4">
+            <h6>Fine Threads co.</h6>
+            icons be here or smth
             <p className="text-muted">
               © 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates
             </p>
