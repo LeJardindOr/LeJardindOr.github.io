@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+$dark-green: #0B3D2C;
+$light-green: #0C5139;
+
 .bg-gradient {
     @apply bg-gradient-to-r from-dark-green to-light-green;
 }
