@@ -1,76 +1,44 @@
 import React from "react";
-/*import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Youtube,
-} from "react-bootstrap-icons";
-
-
-<div className="icon-row">
-              <Facebook
-                color="black"
-                size={20}
-                style={{ opacity: 0.5, marginRight: "10px" }}
-              />
-              <Linkedin
-                color="black"
-                size={20}
-                style={{ opacity: 0.5, marginRight: "10px" }}
-              />
-              <Twitter
-                color="black"
-                size={20}
-                style={{ opacity: 0.5, marginRight: "10px" }}
-              />
-              <Instagram
-                color="black"
-                size={20}
-                style={{ opacity: 0.5, marginRight: "10px" }}
-              />
-              <Youtube color="black" size={24} style={{ opacity: 0.5 }} />
-            </div>
-*/
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="footer text-dark border-top-line mt-auto mx-5">
-      <div className="pt-5 pb-3">
-        <div className="row">
-          <div className="col-md-4 d-flex flex-column justify-content-between mb-md-0 mb-4">
-            <h6>Fine Threads co.</h6>
-            icons be here or smth
-            <p className="text-muted">
-              © 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates
-            </p>
+    <footer className="bg-gradient text-dark mt-auto px-5 pt-5 pb-3">
+      <div className="flex justify-between">
+        <div className="flex flex-col mb-4 w-full md:w-1/3">
+          <h2>Le Jardin d&#39;Or</h2>
+          <p className="text-muted text-sm">
+            <i>© 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates</i>
+          </p>
+        </div>
+        <div className="flex justify-center items-center mb-4 w-full md:w-1/3">
+          <div className="flex items-center">
+            <FaFacebookF className="text-black mr-2.5" size={30} />
+            <FaLinkedinIn className="text-black mr-2.5" size={30} />
+            <FaTwitter className="text-black mr-2.5" size={30} />
+            <FaInstagram className="text-black mr-2.5" size={30} />
+            <FaYoutube className="text-black" size={34} />
           </div>
-          <div className="col-md-8 mb-md-0 mb-4">
-            <div className="row">      
-              <div className="col-md-4 mb-md-0 mb-4">
-                <h6>Contacts</h6>
-                <ul className="list-unstyled text-small">
-                  <li>
-                    <p className="text-muted">1-800-JARDIN</p>
-                  </li>
-                  <li>
-                    <p className="text-muted">123 Road Dr, A1A 1A1</p>
-                  </li>
-                  <li>
-                    <p>
-                      <a
-                        href="mailto:support@finethreads.co"
-                        className="text-muted"
-                        style={{ textDecoration: "none" }}
-                      >
-                        support@lejardindor.com
-                      </a>
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div className="flex flex-col mb-4 w-full md:w-1/3">
+          <ul className="list-unstyled text-small">
+            <li>
+              <p className="text-muted text-sm">
+                <a
+                  href="mailto:support@lejardindor.com"
+                  className="text-muted no-underline"
+                >
+                  Email: <i><b>support@lejardindor.com</b></i>
+                </a>
+              </p>
+            </li>
+            <li>
+              <p className="text-muted text-sm">Phone: <i><b>1-800-JARDIN</b></i></p>
+            </li>
+            <li>
+              <p className="text-muted text-sm">Address: <i><b>123 Road Dr, A1A 1A1</b></i></p>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

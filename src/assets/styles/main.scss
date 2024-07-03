@@ -1,1 +1,33 @@
-body {}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bg-gradient {
+    @apply bg-gradient-to-r from-dark-green to-light-green;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2 {
+    font-family: "Moon Dance", cursive;
+    color: #FFD700;
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h4 {
+    color: grey;
+}
+
+@media (min-width: 768px) {
+    #navbarNavMobile {
+        display: none;
+    }
+}
