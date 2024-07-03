@@ -26,8 +26,21 @@ h4 {
     color: grey;
 }
 
-@media (min-width: 768px) {
-    #navbarNavMobile {
+@media (min-width: 1024px) {
+    .hamburger-menu {
         display: none;
+    }
+    #navbarNav {
+        height: auto !important;
+        opacity: 1;
+        display: block !important;
+    }
+
+    .nav-item {
+        display: inline-block;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
     }
 }
