@@ -31,7 +31,7 @@ function Contact() {
           </form>
         </div>
         <div className="w-full md:w-1/2">
-          <img src={ContactImg} alt="Descriptive Alt Text" className="w-full rounded-lg shadow-md" />
+          <img src={ContactImg} alt="Contact image" className="w-full rounded-lg shadow-md" />
         </div>
       </div>
     </div>
