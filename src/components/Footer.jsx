@@ -3,12 +3,12 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "re
 
 function Footer() {
   return (
-    <footer className="bg-gradient from-dark-green to-light-green text-dark border-t mt-auto px-5 pt-5 pb-3">
+    <footer className="bg-gradient text-dark mt-auto px-5 pt-5 pb-3">
       <div className="flex justify-between">
         <div className="flex flex-col mb-4 w-full md:w-1/3">
-          <h2>Le Jardin d'Or</h2>
+          <h2>Le Jardin d&#39;Or</h2>
           <p className="text-muted text-sm">
-            <i>© 2001-2024, Le Jardin d'Or, Inc. or its affiliates</i>
+            <i>© 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates</i>
           </p>
         </div>
         <div className="flex justify-center items-center mb-4 w-full md:w-1/3">
