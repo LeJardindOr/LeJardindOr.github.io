@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.bg-gradient {
+    @apply bg-gradient-to-r from-dark-green to-light-green;
+}
+
 body {
     font-family: "Roboto", sans-serif;
 }
@@ -9,4 +13,5 @@ body {
 h1,
 h2 {
     font-family: "Moon Dance", cursive;
+    color: #FFD700,
 }

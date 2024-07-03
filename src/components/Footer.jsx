@@ -3,46 +3,42 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaYoutube } from "re
 
 function Footer() {
   return (
-    <footer className="footer text-dark border-top-line mt-auto mx-5">
-      <div className="pt-5 pb-3">
-        <div className="row justify-content-between">
-          <div className="col-md-4 d-flex flex-column mb-md-0 mb-4">
-            <h6>Le Jardin d&#39;Or</h6>
-            <p className="text-muted">
-              © 2001-2024, Le Jardin d&#39;Or, Inc. or its affiliates
-            </p>
+    <footer className="bg-gradient from-dark-green to-light-green text-dark border-t mt-auto px-5 pt-5 pb-3">
+      <div className="flex justify-between">
+        <div className="flex flex-col mb-4 w-full md:w-1/3">
+          <h2>Le Jardin d'Or</h2>
+          <p className="text-muted text-sm">
+            <i>© 2001-2024, Le Jardin d'Or, Inc. or its affiliates</i>
+          </p>
+        </div>
+        <div className="flex justify-center items-center mb-4 w-full md:w-1/3">
+          <div className="flex items-center">
+            <FaFacebookF className="text-black mr-2.5" size={30} />
+            <FaLinkedinIn className="text-black mr-2.5" size={30} />
+            <FaTwitter className="text-black mr-2.5" size={30} />
+            <FaInstagram className="text-black mr-2.5" size={30} />
+            <FaYoutube className="text-black" size={34} />
           </div>
-          <div className="col-md-4 d-flex justify-content-center align-items-center mb-md-0 mb-4">
-            <div className="icon-row" style={{ display: 'flex', alignItems: 'center' }}>
-              <FaFacebookF color="black" size={20} style={{ opacity: 0.5, marginRight: "10px" }} />
-              <FaLinkedinIn color="black" size={20} style={{ opacity: 0.5, marginRight: "10px" }} />
-              <FaTwitter color="black" size={20} style={{ opacity: 0.5, marginRight: "10px" }} />
-              <FaInstagram color="black" size={20} style={{ opacity: 0.5, marginRight: "10px" }} />
-              <FaYoutube color="black" size={24} style={{ opacity: 0.5 }} />
-            </div>
-          </div>
-          <div className="col-md-4 mb-md-0 mb-4">
-            <h6>Contacts</h6>
-            <ul className="list-unstyled text-small">
-              <li>
-                <p className="text-muted">1-800-JARDIN</p>
-              </li>
-              <li>
-                <p className="text-muted">123 Road Dr, A1A 1A1</p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="mailto:support@lejardindor.com"
-                    className="text-muted"
-                    style={{ textDecoration: "none" }}
-                  >
-                    support@lejardindor.com
-                  </a>
-                </p>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div className="flex flex-col mb-4 w-full md:w-1/3">
+          <ul className="list-unstyled text-small">
+            <li>
+              <p className="text-muted text-sm">
+                <a
+                  href="mailto:support@lejardindor.com"
+                  className="text-muted no-underline"
+                >
+                  Email: <i><b>support@lejardindor.com</b></i>
+                </a>
+              </p>
+            </li>
+            <li>
+              <p className="text-muted text-sm">Phone: <i><b>1-800-JARDIN</b></i></p>
+            </li>
+            <li>
+              <p className="text-muted text-sm">Address: <i><b>123 Road Dr, A1A 1A1</b></i></p>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
