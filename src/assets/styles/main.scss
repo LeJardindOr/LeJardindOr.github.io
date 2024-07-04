@@ -29,6 +29,26 @@ h4 {
     color: grey;
 }
 
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-item p {
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  .menu-item::after {
+    content: '';
+    flex-grow: 1;
+    margin: 0 10px;
+    border-bottom: 1px dotted #000;
+    position: relative;
+    top: 0.5em;
+  }
+
 @media (min-width: 1024px) {
     .hamburger-menu {
         display: none;
