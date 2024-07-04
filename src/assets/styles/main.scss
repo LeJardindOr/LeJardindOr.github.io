@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+$dark-green: #0B3D2C;
+$light-green: #0C5139;
+
 .bg-gradient {
     @apply bg-gradient-to-r from-dark-green to-light-green;
 }
@@ -26,8 +29,41 @@ h4 {
     color: grey;
 }
 
-@media (min-width: 768px) {
-    #navbarNavMobile {
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-item p {
+    margin: 0;
+    white-space: nowrap;
+  }
+  
+  .menu-item::after {
+    content: '';
+    flex-grow: 1;
+    margin: 0 10px;
+    border-bottom: 1px dotted #000;
+    position: relative;
+    top: 0.5em;
+  }
+
+@media (min-width: 1024px) {
+    .hamburger-menu {
         display: none;
+    }
+    #navbarNav {
+        height: auto !important;
+        opacity: 1;
+        display: block !important;
+    }
+
+    .nav-item {
+        display: inline-block;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
     }
 }
