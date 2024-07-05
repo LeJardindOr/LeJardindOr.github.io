@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HomeMenuExcerpt from "./HomeMenuExcerpt";
 import HeroImg from "../assets/images/hero.jpg";
 
 function Home() {
@@ -27,9 +28,7 @@ function Home() {
         </div>
       </div>
 
-      <div>
-        <p>here are some of our menu items</p>
-      </div>
+      <HomeMenuExcerpt />
 
       <div className="m-16">
         <h3>Location</h3>
