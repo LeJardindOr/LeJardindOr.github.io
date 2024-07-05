@@ -29,26 +29,6 @@ h4 {
     color: grey;
 }
 
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menu-item p {
-    margin: 0;
-    white-space: nowrap;
-  }
-  
-  .menu-item::after {
-    content: '';
-    flex-grow: 1;
-    margin: 0 10px;
-    border-bottom: 1px dotted #000;
-    position: relative;
-    top: 0.5em;
-  }
-
 @media (min-width: 1024px) {
     .hamburger-menu {
         display: none;
@@ -67,3 +47,60 @@ h4 {
         padding: 0.5rem 1rem;
     }
 }
+
+.section-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0.5em;
+      z-index: 1;
+    }
+  }
+  
+  .section-image {
+    width: 100%;
+    height: 10vh;
+    object-fit: cover;
+  }
+  
+  .section-title {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    z-index: 2;
+  }
+
+
+  .menu-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  .menu-item-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-bottom: 1px dotted #ccc; /* dotted line */
+    z-index: 0;
+  }
+  
+  .menu-item-name, .menu-item-price {
+    background-color: white;
+    z-index: 1;
+  }

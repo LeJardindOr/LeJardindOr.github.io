@@ -1,4 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import AppetizersImg from "../assets/images/HomeFood2.jpg";
+import MainCourseImg from "../assets/images/HomeFood1.jpg";
+import DessertsImg from "../assets/images/HomeFood9.jpg";
+import DrinksImg from "../assets/images/HomeFood6.jpg";
+
 
 const Appetizers = [
   {
@@ -182,59 +188,91 @@ const Drinks = [
   },
 ];
 
+/*
+TODO: 
+- icons
+- alignments
+- filters, search
+
+one of the filters gotta be eco-friendly, and have most of them have it or something
+then you can hav ethe leaf icons or something to go with it.
+
+*/
+
+
 function Menu() {
   return (
-    <div>
+    <div className="mx-16 my-8">
       <h3 className="text-center">Menu</h3>
-      <p>ok here we have the search and filters...</p>
+      <p className="my-16">ok here we have the search and filters...</p>
       <div>
-        <div>
-          <h4>Appetizers</h4>
+        <div className="section-container">
+          <img src={AppetizersImg} alt="Appetizers" className="section-image rounded-lg mb-4"/>
+          <h4 className="section-title">Appetizers</h4>
           <ul>
             {Appetizers.map((item, index) => (
               <li key={index} className="menu-item">
-                <span className="menu-item-name">{item.name}</span>
-                <span className="menu-dots"></span>
-                <span className="menu-item-price">
-                  ${item.price.toFixed(2)}
-                </span>
+                <div className="menu-item-content">
+                  <span className="menu-item-name pr-2">{item.name}</span>
+                  {item.ecoFriendly && <span className="eco-friendly-icon">🍃</span>}
+                  <span className="menu-item-price pl-2">${item.price.toFixed(2)}</span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h4>Main Course</h4>
+        <div className="section-container">
+          <img src={MainCourseImg} alt="Main Course" className="section-image rounded-lg my-4"/>
+          <h4 className="section-title">Main Course</h4>
           <ul>
             {MainCourse.map((item, index) => (
-              <li key={index}>
-                <p>{item.name}</p>
-                <p>${item.price}</p>
+              <li key={index} className="menu-item">
+                <div className="menu-item-content">
+                  <span className="menu-item-name pr-2">{item.name}</span>
+                  {item.ecoFriendly && <span className="eco-friendly-icon">🍃</span>}
+                  <span className="menu-item-price pl-2">${item.price.toFixed(2)}</span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h4>Desserts</h4>
+        <div className="section-container">
+          <img src={DessertsImg} alt="Desserts" className="section-image rounded-lg my-4"/>
+          <h4 className="section-title">Desserts</h4>
           <ul>
             {Desserts.map((item, index) => (
-              <li key={index}>
-                <p>{item.name}</p>
-                <p>${item.price}</p>
+              <li key={index} className="menu-item">
+                <div className="menu-item-content">
+                  <span className="menu-item-name pr-2">{item.name}</span>
+                  {item.ecoFriendly && <span className="eco-friendly-icon">🍃</span>}
+                  <span className="menu-item-price pl-2">${item.price.toFixed(2)}</span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h4>Drinks</h4>
+        <div className="section-container">
+          <img src={DrinksImg} alt="Drinks" className="section-image rounded-lg my-4"/>
+          <h4 className="section-title">Drinks</h4>
           <ul>
             {Drinks.map((item, index) => (
-              <li key={index}>
-                <p>{item.name}</p>
-                <p>${item.price}</p>
+              <li key={index} className="menu-item">
+                <div className="menu-item-content">
+                  <span className="menu-item-name pr-2">{item.name}</span>
+                  {item.ecoFriendly && <span className="eco-friendly-icon">🍃</span>}
+                  <span className="menu-item-price pl-2">${item.price.toFixed(2)}</span>
+                </div>
               </li>
             ))}
           </ul>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Link to="/reserve">
+          <button className="bg-dark-green hover:bg-light-green text-white py-3 px-16 mt-8 rounded-lg transition duration-200 ease-in-out">
+            Book a Reservation
+          </button>
+        </Link>
       </div>
     </div>
   );
