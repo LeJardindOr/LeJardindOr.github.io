@@ -29,7 +29,7 @@ function HomeMenuExcerpt() {
 
   return (
     <div className="px-16">
-        <h3 className="mb-8">See Some of Our Best Menu Items</h3>
+        <h3 className="mb-8">See Some Of Our Best Menu Items</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {menuItems.map((item) => (
             <div key={item.id} className="flex flex-col overflow-hidden h-full">

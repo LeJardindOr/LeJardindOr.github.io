@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const reviews = [
     { quote: "An unparalleled dining experience with exquisite flavors in every dish. Truly a culinary masterpiece.", name: "Emily Johnson" },
@@ -12,43 +12,53 @@ const reviews = [
     { quote: "A symphony of flavors that dances on the palate, each dish tells a story of tradition and innovation. An exquisite dining adventure from start to finish.", name: "Charlotte Green" },
   ];
 
-  function Reviews() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [animate, setAnimate] = useState(true);
-  
-    const changeReview = (direction) => {
-      setAnimate(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => {
-          let newIndex;
-          if (direction === 'next') {
-            newIndex = prevIndex + 3 < reviews.length ? prevIndex + 3 : 0;
-          } else {
-            newIndex = prevIndex - 3 >= 0 ? prevIndex - 3 : reviews.length - (reviews.length % 3 || 3);
-          }
-          return newIndex;
-        });
-        setTimeout(() => setAnimate(true), 300);
-      }, 300);
+
+function Reviews() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const [displayCount, setDisplayCount] = useState(window.innerWidth > 768 ? 3 : 1); // 3 reviews for desktop mode, 1 review for mobile
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDisplayCount(window.innerWidth > 768 ? 3 : 1);
     };
-  
-    return (
-      <div className="mx-16 mb-16">
-        <h3 className="mb-8">Reviews</h3>
-        <div className="flex justify-between items-center">
-          <button onClick={() => changeReview('prev')} className="text-4xl mr-8 transition-transform transform hover:scale-125">&#8592;</button>
-          <div className="flex flex-grow space-x-4">
-            {reviews.slice(currentIndex, currentIndex + 3).map((review, index) => (
-              <div key={index} className={`flex-1 flex flex-col justify-between p-4 border rounded-lg transition duration-500 ease-in-out shadow-lg hover:shadow-none ${animate ? 'opacity-100' : 'opacity-0'}`}>
-                <p>"{review.quote}"</p>
-                <p className="mt-4 text-right">- {review.name}</p>
-              </div>
-            ))}
-          </div>
-          <button onClick={() => changeReview('next')} className="text-4xl ml-8 transition-transform transform hover:scale-125">&#8594;</button>
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const changeReview = (direction) => {
+    setAnimate(false);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => {
+        let newIndex;
+        if (direction === 'next') {
+          newIndex = prevIndex + displayCount < reviews.length ? prevIndex + displayCount : 0;
+        } else {
+          newIndex = prevIndex - displayCount >= 0 ? prevIndex - displayCount : reviews.length - (reviews.length % displayCount || displayCount);
+        }
+        return newIndex;
+      });
+      setTimeout(() => setAnimate(true), 300);
+    }, 300);
+  };
+
+  return (
+    <div className="mx-16 mb-16">
+      <h3 className="mb-8">Don't Just Take It From Us</h3>
+      <div className="flex justify-between items-center">
+        <button onClick={() => changeReview('prev')} className="text-2xl sm:text-4xl mr-2 sm:mr-8 transition-transform transform hover:scale-125">&#8592;</button>
+        <div className="flex flex-grow space-x-4">
+          {reviews.slice(currentIndex, currentIndex + displayCount).map((review, index) => (
+            <div key={index} className={`flex-1 flex flex-col justify-between p-4 border rounded-lg transition duration-500 ease-in-out shadow-lg hover:shadow-none ${animate ? 'opacity-100' : 'opacity-0'}`}>
+              <p>"{review.quote}"</p>
+              <p className="mt-4 text-right">- {review.name}</p>
+            </div>
+          ))}
         </div>
+        <button onClick={() => changeReview('next')} className="text-2xl sm:text-4xl ml-2 sm:ml-8 transition-transform transform hover:scale-125">&#8594;</button>
       </div>
-    );
-  }
-  
-  export default Reviews;
+    </div>
+  );
+}
+
+export default Reviews;
