@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HomeMenuExcerpt from "./HomeMenuExcerpt";
+import Reviews from "./Reviews";
 import HeroImg from "../assets/images/hero.jpg";
 
 function Home() {
@@ -27,12 +29,10 @@ function Home() {
         </div>
       </div>
 
-      <div>
-        <p>here are some of our menu items</p>
-      </div>
+      <HomeMenuExcerpt />
 
       <div className="m-16">
-        <h3>Location</h3>
+        <h3 className="mb-8">Location</h3>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.215222161104!2d-75.6938464237709!3d45.425162671073366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05010b10aa09%3A0xadb5eb264eeb2625!2sCF%20Rideau%20Centre!5e0!3m2!1sen!2sse!4v1720020750253!5m2!1sen!2sse"
           width="100%"
@@ -45,9 +45,7 @@ function Home() {
         ></iframe>
       </div>
 
-      <div>
-        <p>reviews, dont just take it from us</p>
-      </div>
+      <Reviews />
     </>
   );
 }
