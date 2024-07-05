@@ -30,7 +30,7 @@ function HomeMenuExcerpt() {
   return (
     <div className="px-16">
         <h3 className="mb-8">See Some of Our Best Menu Items</h3>
-        <div className="grid grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {menuItems.map((item) => (
             <div key={item.id} className="flex flex-col overflow-hidden h-full">
                 <Link to="/menu">
@@ -54,11 +54,10 @@ function HomeMenuExcerpt() {
             ))}
         </div>
 
-
-        <div className="grid grid-cols-3 gap-8">
-            <div className="col-span-2 flex flex-col overflow-hidden h-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 flex flex-col overflow-hidden h-full">
                 <Link to="/menu" style={{ display: 'block', width: '100%', height: '100%' }}>
-                    <img src={secondRowMenuItems[0].src} alt={`Menu Item ${secondRowMenuItems[0].id}`} className="w-full h-full object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105" />
+                    <img src={secondRowMenuItems[0].src} alt={`Menu Item ${secondRowMenuItems[0].id}`} className="w-full md:h-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105" />
                 </Link>           
                 <div className="py-4 flex flex-col">
                     <div className="font-bold text-xl mb-2">{secondRowMenuItems[0].subtitle}</div>
@@ -79,7 +78,7 @@ function HomeMenuExcerpt() {
                 {secondRowMenuItems.slice(1).map((item) => (
                 <div key={item.id} className="flex-1 flex flex-col overflow-hidden h-full">
                     <Link to="/menu">
-                    <img src={item.src} alt={`Menu Item ${item.id}`} className="w-full h-full object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105" />
+                    <img src={item.src} alt={`Menu Item ${item.id}`} className="w-full h-48 object-cover rounded-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105" />
                     </Link>
                     <div className="py-4 flex flex-col">
                     <div className="font-bold text-xl mb-2">{item.subtitle}</div>
