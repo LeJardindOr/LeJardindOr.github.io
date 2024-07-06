@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-gradient px-5 py-3">
+    <header className="bg-gradient px-16 py-3">
       <nav className="flex items-center justify-between flex-wrap p-6 lg:flex-row">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Link className="text-white no-underline flex items-center" to="/">
@@ -27,13 +27,13 @@ function Header() {
         <div className="block lg:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center px-4 py-3 hamburger-menu"
+            className="flex items-center px-6 py-4 hamburger-menu text-lg"
             aria-controls="navbarNav"
             aria-expanded={isMenuOpen ? "true" : "false"}
             aria-label="Toggle navigation"
           >
             <svg
-              className="fill-current h-6 w-6"
+              className="fill-current h-8 w-8"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -47,15 +47,28 @@ function Header() {
           id="navbarNav"
           style={hamburgerMenuAnimation}
         >
-          <div className="text-sm lg:flex-grow">
+          <div className="text-base lg:flex-grow">
+            {" "}
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="mr-3">
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
+                    currentPage === "/"
+                      ? "font-extrabold text-[#FFD700]"
+                      : "font-medium text-black"
+                  } hover:text-[#FFD700] transition duration-300`}
+                  to="/"
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="mr-3">
+                <Link
+                  className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/menu"
-                      ? "font-bold text-dark"
-                      : "text-grey-200"
-                  }`}
+                      ? "font-extrabold text-[#FFD700]"
+                      : "font-medium text-black"
+                  } hover:text-[#FFD700] transition duration-300`}
                   to="/menu"
                 >
                   Menu
@@ -65,9 +78,9 @@ function Header() {
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/about"
-                      ? "font-bold text-dark"
-                      : "text-grey-200"
-                  }`}
+                      ? "font-extrabold text-[#FFD700]"
+                      : "font-medium text-black"
+                  } hover:text-[#FFD700] transition duration-300`}
                   to="/about"
                 >
                   About Us
@@ -77,9 +90,9 @@ function Header() {
                 <Link
                   className={`inline-block py-2 px-4 no-underline ${
                     currentPage === "/contact"
-                      ? "font-bold text-dark"
-                      : "text-grey-200"
-                  }`}
+                      ? "font-extrabold text-[#FFD700]"
+                      : "font-medium text-black"
+                  } hover:text-[#FFD700] transition duration-300`}
                   to="/contact"
                 >
                   Contact
@@ -87,7 +100,9 @@ function Header() {
               </li>
               <li>
                 <Link
-                  className="inline-block text-white bg-black py-2 px-4 no-underline rounded-lg"
+                  className={`inline-block bg-black font-medium py-2 px-4 no-underline rounded-lg text-base hover:text-[#FFD700] transition duration-300 ${
+                    currentPage === "/reserve" ? "text-[#FFD700]" : "text-white"
+                  }`}
                   to="/reserve"
                 >
                   Reservations

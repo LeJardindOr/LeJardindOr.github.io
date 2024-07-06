@@ -52,29 +52,21 @@ function Footer() {
               <p className="text-muted text-sm">
                 <a
                   href="mailto:support@lejardindor.com"
-                  className="text-muted no-underline"
+                  className="text-muted no-underline font-medium"
                 >
                   Email:{" "}
-                  <i>
-                    <b>support@lejardindor.com</b>
-                  </i>
+                  <i className="text-[#FFD700]">support@lejardindor.com</i>
                 </a>
               </p>
             </li>
             <li>
-              <p className="text-muted text-sm">
-                Phone:{" "}
-                <i>
-                  <b>1-800-JARDIN</b>
-                </i>
+              <p className="text-muted text-sm font-medium">
+                Phone: <i className="text-[#FFD700]">1-800-JARDIN</i>
               </p>
             </li>
             <li>
-              <p className="text-muted text-sm">
-                Address:{" "}
-                <i>
-                  <b>123 Road Dr, A1A 1A1</b>
-                </i>
+              <p className="text-muted text-sm font-medium">
+                Address: <i className="text-[#FFD700]">123 Road Dr, A1A 1A1</i>
               </p>
             </li>
           </ul>
