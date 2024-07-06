@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <header className="bg-gradient px-5 py-3">
+    <header className="bg-gradient px-16 py-3">
       <nav className="flex items-center justify-between flex-wrap p-6 lg:flex-row">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Link className="text-white no-underline flex items-center" to="/">
