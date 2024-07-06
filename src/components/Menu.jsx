@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdOutlineEco } from "react-icons/md";
 import AppetizersImg from "../assets/images/HomeFood2.jpg";
 import MainCourseImg from "../assets/images/HomeFood1.jpg";
 import DessertsImg from "../assets/images/HomeFood9.jpg";
@@ -11,6 +12,7 @@ const Appetizers = [
     price: 5.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
   {
     name: "Bruschetta",
@@ -18,12 +20,14 @@ const Appetizers = [
     vegetarian: true,
     gluten: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Nachos",
     price: 8.99,
     vegetarian: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Spinach Artichoke Dip",
@@ -37,6 +41,7 @@ const Appetizers = [
     price: 9.49,
     vegetarian: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Hummus Platter",
@@ -44,12 +49,14 @@ const Appetizers = [
     vegan: true,
     vegetarian: true,
     nuts: true,
+    ecoFriendly: true,
   },
   {
     name: "Sweet Potato Fries",
     price: 6.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
 ];
 
@@ -60,6 +67,7 @@ const MainCourse = [
     vegan: true,
     vegetarian: true,
     gluten: true,
+    ecoFriendly: true,
   },
   {
     name: "Grilled Salmon",
@@ -76,6 +84,7 @@ const MainCourse = [
     vegan: true,
     vegetarian: true,
     nuts: true,
+    ecoFriendly: true,
   },
   {
     name: "Beef Stroganoff",
@@ -88,12 +97,14 @@ const MainCourse = [
     vegetarian: true,
     gluten: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Mushroom Risotto",
     price: 12.99,
     vegetarian: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Lamb Kebabs",
@@ -105,6 +116,7 @@ const MainCourse = [
     vegan: true,
     vegetarian: true,
     soy: true,
+    ecoFriendly: true,
   },
 ];
 
@@ -115,12 +127,14 @@ const Desserts = [
     vegetarian: true,
     gluten: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Fruit Sorbet",
     price: 5.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
   {
     name: "Apple Pie",
@@ -136,12 +150,14 @@ const Desserts = [
     vegetarian: true,
     gluten: true,
     dairy: true,
+    ecoFriendly: true,
   },
   {
     name: "Vegan Brownie",
     price: 6.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
 ];
 
@@ -151,12 +167,14 @@ const Drinks = [
     price: 1.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
   {
     name: "Organic Red Wine",
     price: 7.99,
     vegan: true,
     vegetarian: true,
+    ecoFriendly: true,
   },
   {
     name: "Almond Milk Latte",
@@ -165,6 +183,7 @@ const Drinks = [
     vegetarian: true,
     gluten: true,
     nuts: true,
+    ecoFriendly: true,
   },
   {
     name: "Green Tea",
@@ -173,17 +192,44 @@ const Drinks = [
     vegetarian: true,
   },
   {
-    name: "Craft IPA",
-    price: 5.99,
+    name: "Vintage Champagne",
+    price: 99.99,
+    vegan: false,
     vegetarian: true,
-    gluten: true,
-    dairy: true,
+    ecoFriendly: true,
   },
   {
-    name: "Cold Brew Coffee",
-    price: 3.99,
+    name: "Single Malt Whisky",
+    price: 15.99,
     vegan: true,
     vegetarian: true,
+  },
+  {
+    name: "Organic Craft Gin",
+    price: 12.99,
+    vegan: true,
+    vegetarian: true,
+    ecoFriendly: true,
+  },
+  {
+    name: "Premium Vodka",
+    price: 9.99,
+    vegan: true,
+    vegetarian: true,
+  },
+  {
+    name: "Rose Wine",
+    price: 8.99,
+    vegan: true,
+    vegetarian: true,
+    ecoFriendly: true,
+  },
+  {
+    name: "Espresso Martini",
+    price: 11.99,
+    vegan: true,
+    vegetarian: true,
+    containsAlcohol: true,
   },
 ];
 
@@ -272,6 +318,12 @@ function Menu() {
             ))}
           </div>
         </div>
+        <div className="flex items-center my-1">
+          <MdOutlineEco style={{ fontSize: "16px", color: "#4B5563" }} />{" "}
+          <p className="ml-2 text-sm text-gray-600 font-medium">
+            = Eco-friendly sourced
+          </p>
+        </div>
         <div className="section-container">
           <img
             src={AppetizersImg}
@@ -283,10 +335,12 @@ function Menu() {
             {filterItems(Appetizers).map((item, index) => (
               <li key={index} className="menu-item">
                 <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">{item.name}</span>
-                  {item.ecoFriendly && (
-                    <span className="eco-friendly-icon">🍃</span>
-                  )}
+                  <span className="menu-item-name pr-2">
+                    {item.name}
+                    {item.ecoFriendly && (
+                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                    )}
+                  </span>
                   <span className="menu-item-price pl-2">
                     ${item.price.toFixed(2)}
                   </span>
@@ -306,10 +360,12 @@ function Menu() {
             {filterItems(MainCourse).map((item, index) => (
               <li key={index} className="menu-item">
                 <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">{item.name}</span>
-                  {item.ecoFriendly && (
-                    <span className="eco-friendly-icon">🍃</span>
-                  )}
+                  <span className="menu-item-name pr-2">
+                    {item.name}
+                    {item.ecoFriendly && (
+                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                    )}
+                  </span>
                   <span className="menu-item-price pl-2">
                     ${item.price.toFixed(2)}
                   </span>
@@ -329,10 +385,12 @@ function Menu() {
             {filterItems(Desserts).map((item, index) => (
               <li key={index} className="menu-item">
                 <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">{item.name}</span>
-                  {item.ecoFriendly && (
-                    <span className="eco-friendly-icon">🍃</span>
-                  )}
+                  <span className="menu-item-name pr-2">
+                    {item.name}
+                    {item.ecoFriendly && (
+                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                    )}
+                  </span>
                   <span className="menu-item-price pl-2">
                     ${item.price.toFixed(2)}
                   </span>
@@ -352,10 +410,12 @@ function Menu() {
             {filterItems(Drinks).map((item, index) => (
               <li key={index} className="menu-item">
                 <div className="menu-item-content">
-                  <span className="menu-item-name pr-2">{item.name}</span>
-                  {item.ecoFriendly && (
-                    <span className="eco-friendly-icon">🍃</span>
-                  )}
+                  <span className="menu-item-name pr-2">
+                    {item.name}
+                    {item.ecoFriendly && (
+                      <MdOutlineEco className="eco-friendly-icon mx-1 inline-block" />
+                    )}
+                  </span>
                   <span className="menu-item-price pl-2">
                     ${item.price.toFixed(2)}
                   </span>

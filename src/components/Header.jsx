@@ -100,10 +100,8 @@ function Header() {
               </li>
               <li>
                 <Link
-                  className={`inline-block text-white bg-black py-2 px-4 no-underline rounded-lg text-base hover:text-[#FFD700] transition duration-300 ${
-                    currentPage === "/reserve"
-                      ? "font-extrabold text-[#FFD700]"
-                      : "font-medium text-black"
+                  className={`inline-block bg-black font-medium py-2 px-4 no-underline rounded-lg text-base hover:text-[#FFD700] transition duration-300 ${
+                    currentPage === "/reserve" ? "text-[#FFD700]" : "text-white"
                   }`}
                   to="/reserve"
                 >

@@ -6,7 +6,7 @@ $dark-green: #0B3D2C;
 $light-green: #0C5139;
 
 .bg-gradient {
-  @apply bg-gradient-to-r from-dark-green to-light-green;
+  background-image: linear-gradient(to right, $dark-green, $light-green);
 }
 
 body {
