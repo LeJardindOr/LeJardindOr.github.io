@@ -9,7 +9,7 @@ function Header() {
 
   const hamburgerMenuAnimation = {
     transition: "height 0.5s ease-out, opacity 0.5s ease-out",
-    height: isMenuOpen ? "150px" : "0",
+    height: isMenuOpen ? "200px" : "0",
     overflow: "hidden",
     display: "flex",
     justifyContent: "center",
@@ -24,7 +24,7 @@ function Header() {
             <h2>Le Jardin d&#39;Or</h2>
           </Link>
         </div>
-        <div className="block lg:hidden">
+        <div className="block lg:hidden mx-auto sm:mx-0">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="flex items-center px-6 py-4 hamburger-menu text-lg"
